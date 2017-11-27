@@ -92,6 +92,12 @@ public class Shutdown{
         }
     }
 
+    /**
+     * Shows a toast with the specified message in given context
+     *
+     * @param context the Activity as a context
+     * @param message the message to be displayed
+     */
     private static void makeText(Activity context, String message){
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
