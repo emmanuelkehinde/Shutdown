@@ -26,12 +26,7 @@ public class Shutdown{
 
     private static boolean readyToClose = false;
     private static Handler handler = new Handler();
-    private static Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-            readyToClose = false;
-        }
-    };
+    private static Runnable runnable = () -> readyToClose = false;
 
     /**
      * Static method to be called that handles closing of the app interactively
@@ -41,7 +36,7 @@ public class Shutdown{
     public static void now(Activity context){
         if (context!=null){
             if (!readyToClose) {
-                Toast.makeText(context, "Press back again to close", Toast.LENGTH_SHORT).show();
+                makeText(context, "Press back again to close");
                 readyToClose = true;
                 handler.postDelayed(runnable,3000);
             }else context.finish();
@@ -57,7 +52,7 @@ public class Shutdown{
     public static void now(Activity context, String message){
         if (context!=null && !message.isEmpty()){
             if (!readyToClose) {
-                Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+                makeText(context, message);
                 readyToClose = true;
                 handler.postDelayed(runnable,3000);
             }else context.finish();
@@ -73,7 +68,7 @@ public class Shutdown{
     public static void now(Activity context, long time){
         if (context!=null && time!=0){
             if (!readyToClose) {
-                Toast.makeText(context, "Press back again to close", Toast.LENGTH_SHORT).show();
+                makeText(context, "Press back again to close");
                 readyToClose = true;
                 handler.postDelayed(runnable,time);
             }else context.finish();
@@ -90,10 +85,20 @@ public class Shutdown{
     public static void now(Activity context, String message, long time){
         if (context!=null && !message.isEmpty() && time!=0){
             if (!readyToClose) {
-                Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+                makeText(context, message);
                 readyToClose = true;
                 handler.postDelayed(runnable,time);
             }else context.finish();
         }
+    }
+
+    /**
+     * Shows a toast with the specified message in given context
+     *
+     * @param context the Activity as a context
+     * @param message the message to be displayed
+     */
+    private static void makeText(Activity context, String message){
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
 }
