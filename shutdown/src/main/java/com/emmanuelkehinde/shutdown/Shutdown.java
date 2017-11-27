@@ -24,9 +24,10 @@ import android.widget.Toast;
  */
 public class Shutdown{
 
-    private static boolean readyToClose = false;
-    private static Handler handler = new Handler();
-    private static Runnable runnable = () -> readyToClose = false;
+    private static long DEFAULT_TIMEOUT = 3000;
+    private static String DEFAULT_MESSAGE = "Press back again to close";
+    private static long lastClickTime;
+
 
     /**
      * Static method to be called that handles closing of the app interactively
@@ -35,11 +36,7 @@ public class Shutdown{
      */
     public static void now(Activity context){
         if (context!=null){
-            if (!readyToClose) {
-                makeText(context, "Press back again to close");
-                readyToClose = true;
-                handler.postDelayed(runnable,3000);
-            }else context.finish();
+            init(context, DEFAULT_MESSAGE, DEFAULT_TIMEOUT);
         }
     }
 
@@ -51,11 +48,7 @@ public class Shutdown{
      */
     public static void now(Activity context, String message){
         if (context!=null && !message.isEmpty()){
-            if (!readyToClose) {
-                makeText(context, message);
-                readyToClose = true;
-                handler.postDelayed(runnable,3000);
-            }else context.finish();
+            init(context, message, DEFAULT_TIMEOUT);
         }
     }
 
@@ -63,15 +56,11 @@ public class Shutdown{
      * Static method to be called that handles closing of the app interactively
      *
      * @param context the Activity as a context
-     * @param time    the time before it resets whereby user is required to press back twice again
+     * @param timeout the time before it resets, whereby user is required to press back twice again
      */
-    public static void now(Activity context, long time){
-        if (context!=null && time!=0){
-            if (!readyToClose) {
-                makeText(context, "Press back again to close");
-                readyToClose = true;
-                handler.postDelayed(runnable,time);
-            }else context.finish();
+    public static void now(Activity context, long timeout){
+        if (context!=null && timeout!=0){
+            init(context, DEFAULT_MESSAGE, timeout);
         }
     }
 
@@ -80,15 +69,27 @@ public class Shutdown{
      *
      * @param context the Activity as a context
      * @param message the message to be displayed
-     * @param time    the time before it resets whereby user is required to press back twice again
+     * @param timeout the time before it resets, whereby user is required to press back twice again
      */
-    public static void now(Activity context, String message, long time){
-        if (context!=null && !message.isEmpty() && time!=0){
-            if (!readyToClose) {
-                makeText(context, message);
-                readyToClose = true;
-                handler.postDelayed(runnable,time);
-            }else context.finish();
+    public static void now(Activity context, String message, long timeout){
+        if (context!=null && !message.isEmpty() && timeout!=0){
+            init(context, message, timeout);
+        }
+    }
+
+    /**
+     * Helper method
+     *
+     * @param context the Activity as a context
+     * @param message the message to be displayed
+     * @param timeout the time before it resets, whereby user is required to press back twice again
+     */
+    private static void init(Activity context, String message, long timeout){
+        if ((lastClickTime + timeout)> System.currentTimeMillis()){
+            context.finish();
+        }else {
+            makeText(context, message);
+            lastClickTime = System.currentTimeMillis();
         }
     }
 
