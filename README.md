@@ -21,7 +21,7 @@ providing a user the chance to revisit his plan of closing the app.
 
 Add this in your build.gradle
 ```groovy
-compile 'com.emmanuelkehinde:shutdown:1.0.0'
+compile 'com.emmanuelkehinde:shutdown:1.0.1'
 ```
 
 Place this in your activity `onBackPressed()` method
