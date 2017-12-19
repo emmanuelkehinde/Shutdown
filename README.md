@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Shutdown-green.svg?style=flat)](https://android-arsenal.com/details/1/6499)
+[![Made in Nigeria](https://img.shields.io/badge/made%20in-nigeria-008751.svg?style=flat-square)](https://github.com/acekyd/made-in-nigeria)
 
 ## A library that handles the closing of your app interactively.
 <img src=https://raw.githubusercontent.com/emmanuelkehinde/shutdown/master/screenshots/shutdown.gif alt="Shutdown in action" width=360 height=640 />
