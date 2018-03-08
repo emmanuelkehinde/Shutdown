@@ -1,4 +1,4 @@
-#Contributing
+# Contributing
 
 1. Fork the project and clone locally.
 2. Create an upstream remote and sync your local copy before you branch.
