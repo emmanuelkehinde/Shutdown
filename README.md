@@ -54,7 +54,7 @@ Shutdown.now(this,5000);
 Shutdown.now(this,"Hey! You are about to leave",5000);
 ```
 
-## If this library helps you in anyway, show your love :heart: by putting a :star: on this project :v: or you can buy me a coffee <a href='https://ko-fi.com/P5P0GMV2' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+## If this library helps you in anyway, show your love :heart: by putting a :star: on this project :v:; or you can buy me a coffee <a href='https://ko-fi.com/P5P0GMV2' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
 
 ### License
