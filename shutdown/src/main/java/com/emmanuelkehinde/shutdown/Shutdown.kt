@@ -17,7 +17,9 @@ class Shutdown {
          * @param timeout the time before it resets, whereby user is required to press back twice again
          */
 
-        fun now(context: Activity?, message: String = DEFAULT_MESSAGE, timeout: Long = DEFAULT_TIMEOUT) {
+
+        @JvmStatic
+        @JvmOverloads fun now(context: Activity?, message: String = DEFAULT_MESSAGE, timeout: Long = DEFAULT_TIMEOUT) {
             context?.let { init(it, message, timeout) }
         }
 
