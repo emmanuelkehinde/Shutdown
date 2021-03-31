@@ -3,7 +3,7 @@ package com.emmanuelkehinde.shutdown
 import android.app.Activity
 import android.widget.Toast
 
-class ShutdownKt {
+class Shutdown {
     companion object {
         private const val DEFAULT_TIMEOUT: Long = 3000
         private const val DEFAULT_MESSAGE = "Press back again to close"
