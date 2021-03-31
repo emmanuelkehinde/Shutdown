@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 
 /*
  * Copyright (C) 2017 Emmanuel Kehinde
@@ -17,13 +18,12 @@ apply plugin: 'com.android.library'
  */
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "27.0.1"
+    compileSdkVersion 30
 
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 26
+        minSdkVersion 16
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -51,5 +51,9 @@ dependencies {
     androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
 
