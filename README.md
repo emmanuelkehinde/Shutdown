@@ -21,9 +21,21 @@ providing a user the chance to revisit his plan of closing the app.
 
 ## Using Shutdown Library in your Android application
 
-Add this in your build.gradle
+Add in your root build.gradle at the end of repositories:
 ```groovy
-implementation 'com.emmanuelkehinde:shutdown:1.0.1'
+allprojects {
+   repositories {
+      ...
+      maven { url 'https://jitpack.io' }
+   }
+}
+```
+
+Add the dependency
+```groovy
+dependencies {
+    implementation 'com.github.emmanuelkehinde:Shutdown:1.1.0'
+}
 ```
 
 Place this in your activity `onBackPressed()` method
