@@ -7,3 +7,11 @@
 /build
 /captures
 .externalNativeBuild
+
+# IDE files
+.idea/
+
+# Local secrets
+.env
+.env.*
+!.env.example
