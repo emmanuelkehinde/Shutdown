@@ -3,9 +3,11 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Shutdown-green.svg?style=flat)](https://android-arsenal.com/details/1/6499)
 [![Made in Nigeria](https://img.shields.io/badge/made%20in-nigeria-008751.svg?style=flat-square)](https://github.com/acekyd/made-in-nigeria)
-[![Build Status](https://travis-ci.org/emmanuelkehinde/Shutdown.svg?branch=master)](https://travis-ci.org/emmanuelkehinde/Shutdown)
 
 ## A library that handles the closing of your app interactively.
+
+Shutdown is an Android library for app developers who want users to press back twice before an app or screen closes. The first press shows a message, and a second press within the timeout closes the activity. It's written in Kotlin, works from Java and Kotlin, and has no dependencies beyond AndroidX AppCompat.
+
 <img src=https://raw.githubusercontent.com/emmanuelkehinde/shutdown/master/screenshots/shutdown.gif alt="Shutdown in action" width=360 height=640 />
 
 ### Overview of Shutdown library
@@ -68,6 +70,17 @@ Shutdown.now(this,"Hey! You are about to leave",5000);
 
 ## If this library helps you in anyway, show your love :heart: by putting a :star: on this project :v:; or you can buy me a coffee <a href='https://ko-fi.com/P5P0GMV2' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi2.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
+
+## Running the sample app
+
+1. Clone the repository and open it in Android Studio, or use the command line.
+2. Run `./gradlew :sampleapp:installDebug` with a device or emulator connected.
+
+The build still uses Gradle 6.5 and Android Gradle Plugin 4.1.3, so it needs JDK 8 or 11. Updating the build is the first item in [ROADMAP.md](ROADMAP.md).
+
+## Roadmap
+
+Planned work is in [ROADMAP.md](ROADMAP.md).
 
 ### License
 ```
